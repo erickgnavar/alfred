@@ -5,6 +5,7 @@
 Setup environment variables
 
 ```
+export BOT_NAME="alfred"
 export JENKINS_URL="jenkins.mydomain.com"
 export JENKINS_USER_ID="admin"
 export JENKINS_API_TOKEN="super secret token"

@@ -4,7 +4,7 @@ use Mix.Config
 
 config :alfred, Alfred.Robot,
   adapter: Hedwig.Adapters.Slack,
-  name: "alfred",
+  name: System.get_env("BOT_NAME"),
   aka: "/",
   token: System.get_env("SLACK_TOKEN"),
   responders: [
