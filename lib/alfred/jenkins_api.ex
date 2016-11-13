@@ -12,7 +12,7 @@ defmodule Alfred.JenkinsAPI do
             {:ok, "ok"}
           {:ok, %HTTPoison.Response{status_code: 404}} ->
             {:error, "job not found"}
-          {:error, reason} ->
+          {:error, %HTTPoison.Error{reason: reason}} ->
             {:error, reason}
         end
       {:error, reason} ->
@@ -30,8 +30,8 @@ defmodule Alfred.JenkinsAPI do
           _ ->
             {:error, "decode error"}
         end
-      _ ->
-        {:error, "connection error"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
     end
   end
 
@@ -51,8 +51,8 @@ defmodule Alfred.JenkinsAPI do
           _ ->
             {:error, "decode error"}
         end
-      _ ->
-        {:error, "connection error"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
     end
   end
 
