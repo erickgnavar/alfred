@@ -10,7 +10,8 @@ config :alfred, Alfred.Robot,
   responders: [
     {Hedwig.Responders.Help, []},
     {Hedwig.Responders.Ping, []},
-    {Alfred.Responders.Jenkins, []}
+    {Alfred.Responders.Jenkins, []},
+    {Alfred.Responders.HttpCat, []}
   ]
 
 config :alfred,
